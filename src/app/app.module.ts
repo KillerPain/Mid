@@ -9,13 +9,15 @@ import { PostComponent } from './components/post/post.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { AppService } from 'app/app.service';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     CommentsComponent,
-    CommentComponent
+    CommentComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

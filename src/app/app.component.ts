@@ -12,19 +12,16 @@ export class AppComponent implements OnInit {
   @ViewChild('post', {read: ViewContainerRef })
   private postContainer: ViewContainerRef ;
 
-  title: string = "";
-  author: string = "";
-  content: string = "";
-
   constructor(private cfr: ComponentFactoryResolver, private service: AppService) {}
 
-  ngOnInit() {}
-
-  onCreate() {
+  ngOnInit() {
     const factory = this.cfr.resolveComponentFactory(PostComponent);
-    const componentRef = this.postContainer.createComponent(factory);
-    componentRef.instance.title = this.title;
-    componentRef.instance.author = this.author;
-    componentRef.instance.content = this.content;
-  }
+    this.service._post.subscribe((post: IPost) => {      
+      const componentRef = this.postContainer.createComponent(factory);
+      componentRef.instance.title = post.title;
+      componentRef.instance.author = post.author;
+      componentRef.instance.content = post.content;
+    });
+    
+  } 
 }
