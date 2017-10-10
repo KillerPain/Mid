@@ -5,10 +5,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PostComponent } from './components/post/post.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { AppService } from 'app/app.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostComponent,
+    CommentsComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +23,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  entryComponents: [PostComponent],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
