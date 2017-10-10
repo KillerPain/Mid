@@ -16,12 +16,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const factory = this.cfr.resolveComponentFactory(PostComponent);
-    this.service._post.subscribe((post: IPost) => {      
+    this.service._post.subscribe((post: IPost) => {
       const componentRef = this.postContainer.createComponent(factory);
       componentRef.instance.title = post.title;
       componentRef.instance.author = post.author;
       componentRef.instance.content = post.content;
     });
-    
   } 
 }

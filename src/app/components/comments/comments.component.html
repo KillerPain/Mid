@@ -1,3 +1,12 @@
-<p>
-  comments works!
-</p>
+<div class="container">
+    <div class="form">
+        <span>Add Comment</span>
+        <div class="input-group">
+            <span>Content:</span><textarea name="" id="" cols="30" rows="10" [(ngModel)]="content"></textarea>
+        </div>
+        <button type="submit" (click)="onCreate()">Add</button>
+    </div>
+    <div class="comments">
+        <ng-template #comment></ng-template>
+    </div>
+</div>

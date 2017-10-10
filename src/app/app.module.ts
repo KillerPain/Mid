@@ -10,6 +10,9 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { AppService } from 'app/app.service';
 import { FormComponent } from './components/form/form.component';
+import { PipePipe } from './pipe.pipe';
+import { DirectiveDirective } from './directive.directive';
+import { CommentService } from 'app/components/comment/comment.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { FormComponent } from './components/form/form.component';
     PostComponent,
     CommentsComponent,
     CommentComponent,
-    FormComponent
+    FormComponent,
+    PipePipe,
+    DirectiveDirective
   ],
   imports: [
     BrowserModule,
@@ -25,8 +30,8 @@ import { FormComponent } from './components/form/form.component';
     HttpModule,
     AppRoutingModule
   ],
-  entryComponents: [PostComponent],
-  providers: [AppService],
+  entryComponents: [PostComponent, CommentComponent],
+  providers: [AppService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

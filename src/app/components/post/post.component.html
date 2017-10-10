@@ -1,12 +1,19 @@
 <div class="container">
-    <div class="header">
-        <span>{{title}}</span>
-        <span class="Author">{{author}}</span>
+    <div class="card">
+        <div class="header">
+            <span>{{title}}</span>
+            <span class="Author">{{author}}</span>
+        </div>
+        <div class="body">
+            <span>{{content}}</span>
+        </div>
+        <div class="footer">
+            <span class="time">{{date | date:'medium'}}</span>
+        </div>
+        <div class="button-group">
+            <button (click)="onAddLike()">Like</button>
+            <span>{{likes}}</span>
+        </div>
     </div>
-    <div class="body">
-        <span>{{content}}</span>
-    </div>
-    <div class="footer">
-        <span class="time">{{date | date:'medium'}}</span>
-    </div>
+    <m-comments></m-comments>
 </div>

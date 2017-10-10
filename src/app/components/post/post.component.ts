@@ -33,11 +33,16 @@ export class PostComponent implements OnInit {
 
   date: number;
 
+  likes: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.date = Date.now();
+    this.likes = 0;
   }
 
+  onAddLike() {
+    this.likes ++;
+  }
 }
